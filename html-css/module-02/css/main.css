@@ -1,0 +1,38 @@
+main {
+    color: #626262;
+}
+main section {
+    font-size: 0;
+}
+main article {
+    display: inline-block;
+    width: 50%;
+    font-size: 14px;
+    padding: 0 30px 70px;
+    box-sizing: border-box;
+}
+main span {
+    margin: 25px 0;
+    color: #b4ad9e;
+    display: inline-block;
+    text-transform: uppercase;
+}
+main h3 {
+    margin: 0 0 40px;
+    font-size: 30px;
+}
+main p {
+    max-height: 60px;
+    overflow: hidden;
+    line-height: 1.5;
+}
+main button {
+    margin: 0 auto;
+    margin-bottom: 70px;
+    display: block;
+    font-size: 20px;
+    background: transparent;
+    border: 1px solid #626262;
+    padding: 16px 35px;
+    color: inherit;
+}

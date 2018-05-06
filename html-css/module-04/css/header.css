@@ -1,0 +1,33 @@
+.menu {
+    list-style: none; 
+    margin: 40px 0;
+}
+
+.menu-item {
+    float: left;
+    padding-left: 30px;    
+}
+
+.menu-item:first-child {
+    width: 614px;
+    padding-left: 0;    
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.menu-link {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #0f0101;
+    font-weight: 800;
+    letter-spacing: -0.28px;
+    transition: all .2s ease;    
+}
+
+.menu-link:hover {
+    color: #1abc9c;
+}

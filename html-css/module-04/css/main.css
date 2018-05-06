@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 1110px;
+    margin: 0 auto;
+}
+
+main {
+    padding-bottom: 70px;
+    background-color: #e9f0fd;
+}
+
+h2 {
+    font-size: 48px;
+    text-align: center;
+    color: #515151;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.96px;
+}
+
+h2:after {
+    content: '';
+    position: absolute;
+    width: 164px;
+    height: 7px;
+    background-color: #1abc9c;
+    bottom: -27px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}

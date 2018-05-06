@@ -1,0 +1,13 @@
+footer {
+    background-color: #323232;
+    color: #fefefe;
+    letter-spacing: -0.32px;
+    font-size: 16px;
+    padding: 33px 0;
+    text-align: center;
+}
+
+.footer-link {
+    color: #46bfa9;
+    text-decoration: none;
+}

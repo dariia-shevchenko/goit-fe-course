@@ -13,7 +13,6 @@
 .products-item {
     float: left;
     width: 255px;
-    background-color: #e8effc;
     margin-right: 30px;
     margin-bottom: 30px;
     position: relative;
@@ -25,6 +24,11 @@
 
 .products-item:hover .products-title {
     background-color: #1abc9c;
+}
+
+.products-item:hover .products-btns {
+    visibility: visible;
+    opacity: 1;    
 }
 
 .products-title {
@@ -58,4 +62,89 @@
     background-color: rgba(255, 255, 255, 0.44);
     width: 54px;
     padding: 15px 13px 12px;    
+}
+
+.products-btns {
+    width: calc(100% - 20px);
+    height: calc(100% - 60px);
+    background-color: rgba(0, 0, 0, 0.55);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 0;
+    transition: all .2s ease;
+    visibility: hidden;
+    opacity: 0;   
+}
+
+.products-btns-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.products-btn {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.products-btns span {
+    display: inline-block;
+}
+
+.products-btn:hover,
+.products-btn-card:hover {
+    background-color: #1abc9c;
+    border: 1px solid #1abc9c;
+}
+
+.products-btn-heart {
+    background-image: url(../img/heart.png);
+}
+
+.products-btn-clock {
+    background-image: url(../img/clock.png);
+}
+
+.products-btn-arrows {
+    background-image: url(../img/arrows.png);
+    margin: 0 8px;
+}
+
+.products-btn-card {
+    width: 166px;
+    height: 50px;
+    margin-top: 8px;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #323232;
+    transition: all .2s ease;    
+}
+
+.products-btn-card span {
+    letter-spacing: -0.28px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.products-btn-tray {
+    background-image: url(../img/tray.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 50px;
+    height: 50px;
+    display: inline-block;    
 }

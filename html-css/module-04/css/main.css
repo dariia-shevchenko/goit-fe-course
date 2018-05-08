@@ -39,3 +39,9 @@ h2:after {
     left: 50%;
     transform: translate(-50%, 0);
 }
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}

@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #777;
+}
+
+.container {
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.title-first {
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #222;
+}
+
+.title-second {
+    font-size: 16px;
+    font-family: 'Lora';
+}

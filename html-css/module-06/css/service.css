@@ -1,0 +1,52 @@
+.service-content {
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+
+.service-item {
+    flex-basis: 33.33%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px 120px;
+    box-sizing: border-box;
+    text-align: center;
+    align-items: center;
+}
+
+.service-text {
+    color: #777;
+    line-height: 24px;
+    font-family: 'Roboto Slab', serif;
+    letter-spacing: -0.35px;
+}
+
+.service-title {
+    margin-bottom: 15px;
+    color: #222;
+    letter-spacing: -0.45px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.service-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 3px solid #fed136;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+}
+
+.icon-basket {
+    background-image: url(../img/icon-basket.png);
+}
+
+.icon-laptop {
+    background-image: url(../img/icon-laptop.png);
+}
+
+.icon-locked {
+    background-image: url(../img/icon-locked.png);
+}

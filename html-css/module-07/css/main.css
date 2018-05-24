@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #333;
+    text-align: center;
+}
+
+.container {
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+@media (min-width:768px) {
+    .container {
+        max-width: 505px;
+    }
+}
+
+@media (min-width:1440px) {
+    .container {
+        max-width: 940px;
+    }
+}

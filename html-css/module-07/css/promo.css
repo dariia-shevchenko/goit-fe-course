@@ -1,6 +1,6 @@
 .promo {
     background-color: #1a1915;
-    background-image: url('../img/bg-small.png');
+    background-image: url('../img/bg-large.png');
     background-repeat: no-repeat;
     background-position: 50% 0;
     height: 540px;
@@ -38,7 +38,6 @@
 
 @media (min-width:768px) {
     .promo {
-        background-image: url('../img/bg-large.png');
         height: 700px;
         max-width: 1440px;
         padding: 215px 0 0;

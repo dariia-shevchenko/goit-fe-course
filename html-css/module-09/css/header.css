@@ -1,13 +1,21 @@
 header {
     padding: 40px 0 115px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;    
+    -webkit-box-align: center;    
+    -ms-flex-align: center;    
     align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
 .header__menu {
     list-style: none;
-    display: flex;    
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;     
 }
 
 .header__menu-item {
@@ -20,6 +28,8 @@ header {
     text-decoration: none;
     color: #95e1d3;
     font-weight: 800;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
     transition: all .2s;
 }
 
@@ -32,7 +42,9 @@ header {
     bottom: -10px;
     left: 0;
     opacity: 0;
-    transition: all .2s;    
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;   
 }
 
 .header__menu-item:hover::after {

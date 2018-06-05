@@ -73,8 +73,6 @@
 }
 
 .employee__icon {
-    background-repeat: no-repeat;
-    background-position: 50%;
     height: 56px;
     width: 56px;
     background-color: #fce38a;
@@ -86,11 +84,21 @@
 }
 
 .employee__icon:hover {
-    background-color: #95e1d3;
+    background-color: #f38181;
 }
 
 .employee__icon:last-child {
     border-right-width: 0;
+}
+
+.employee__icon:hover .employee__svg {
+    fill: #fff;
+}
+
+.employee__svg {
+    height: 56px;
+    width: 56px;
+    fill: #f38181;
 }
 
 .employee__title {

@@ -80,7 +80,13 @@
     cursor: pointer;
     -webkit-transition: background-color .2s;
     -o-transition: background-color .2s;
-    transition: background-color .2s; 
+    transition: background-color .2s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .employee__icon:hover {
@@ -96,7 +102,7 @@
 }
 
 .employee__svg {
-    height: 56px;
+    height: 26px;
     width: 56px;
     fill: #f38181;
 }

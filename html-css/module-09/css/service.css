@@ -23,7 +23,7 @@
 
 .service__icon {
     width: 32px;
-    /* background-repeat: no-repeat; */
+    height: 32px;
     flex-shrink: 0;
     padding-right: 30px;
 }

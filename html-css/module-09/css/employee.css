@@ -105,6 +105,9 @@
     height: 26px;
     width: 56px;
     fill: #f38181;
+    -webkit-transition: fill .2s ease;
+    -o-transition: fill .2s ease;
+    transition: fill .2s ease;
 }
 
 .employee__title {

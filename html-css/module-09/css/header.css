@@ -5,17 +5,17 @@ header {
     justify-content: space-between;
 }
 
-.menu {
+.header__menu {
     list-style: none;
     display: flex;    
 }
 
-.menu-item {
+.header__menu-item {
     margin-left: 30px;
     position: relative; 
 }
 
-.menu-link {
+.header__menu-link {
     text-transform: uppercase;
     text-decoration: none;
     color: #95e1d3;
@@ -23,7 +23,7 @@ header {
     transition: all .2s;
 }
 
-.menu-item::after {
+.header__menu-item::after {
     content: '';
     position: absolute;
     width: 0;
@@ -35,11 +35,11 @@ header {
     transition: all .2s;    
 }
 
-.menu-item:hover::after {
+.header__menu-item:hover::after {
     width: 100%;
     opacity: 1;    
 }
 
-.menu-link:hover {
+.header__menu-link:hover {
     color: #f38181;
 }

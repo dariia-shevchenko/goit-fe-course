@@ -21,33 +21,9 @@
     margin-bottom: 20px;
 }
 
-.service-icon {
+.service__icon {
     width: 32px;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     flex-shrink: 0;
     padding-right: 30px;
-}
-
-.icon-alarm {
-    background-image: url(../img/alarm.png);
-}
-
-.icon-linegraph {
-    background-image: url(../img/linegraph.png);
-}
-
-.icon-computer {
-    background-image: url(../img/computer.png);
-}
-
-.icon-book {
-    background-image: url(../img/book.png);
-}
-
-.icon-home {
-    background-image: url(../img/home.png);
-}
-
-.icon-image {
-    background-image: url(../img/image.png);
 }

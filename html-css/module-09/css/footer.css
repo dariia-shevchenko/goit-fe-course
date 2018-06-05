@@ -1,18 +1,24 @@
-footer {
+.footer {
     border-top: 1px solid #e5e5e5;
     font-size: 16px;
     padding: 10px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
-.footer-link {
+.footer__link {
     color: #f38181;
     text-decoration: none;
 }
 
-.footer-input {
+.footer__input {
     width: 230px;
     height: 40px;
     border: 1px solid #e7e7e7;
@@ -41,7 +47,7 @@ footer {
     font-size: 14px;
 }
 
-.footer-btn {
+.footer__btn {
     background-color: #95e1d3;
     color: #fff;
     text-transform: uppercase;
@@ -52,6 +58,8 @@ footer {
     font-weight: 700;
 }
 
-.footer-form {
+.footer__form {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }

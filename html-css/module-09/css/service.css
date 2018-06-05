@@ -1,22 +1,28 @@
-.service-content {
+.service__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
-.service-item {
-    flex-basis: 33.33%;
+.service__item {
+    -ms-flex-preferred-size: 33.33%;
+        flex-basis: 33.33%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 0 20px 100px;
     box-sizing: border-box;
 }
 
-.service-text {
+.service__text {
     color: #999;
     line-height: 24px;
     font-family: 'Roboto', sans-serif;
 }
 
-.service-title {
+.service__title {
     text-transform: uppercase;
     margin-bottom: 20px;
 }
@@ -24,6 +30,9 @@
 .service__icon {
     width: 32px;
     height: 32px;
+    fill: #95e1d3;
+    -ms-flex-negative: 0;
+    -ms-flex-negative: 0;
     flex-shrink: 0;
     padding-right: 30px;
 }

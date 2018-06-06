@@ -12,7 +12,7 @@
     background-size: cover;
     height: 100vh;
     min-height: 800px;
-    color: #fff;
+    color: $tertiary-color;
 
     @media
         (-webkit-min-device-pixel-ratio: 2),
@@ -31,10 +31,10 @@
         top: 0;
         width: 100%;
         height: 100%;
-        background:  -webkit-gradient(linear, left bottom, left top, from(rgba(252, 227, 138, 0.9)), to(rgba(243, 129, 129, 0.9)));
-        background:  -webkit-linear-gradient(bottom, rgba(252, 227, 138, 0.9) 0%, rgba(243, 129, 129, 0.9) 100%);
-        background:  -o-linear-gradient(bottom, rgba(252, 227, 138, 0.9) 0%, rgba(243, 129, 129, 0.9) 100%);
-        background:  linear-gradient(to top, rgba(252, 227, 138, 0.9) 0%, rgba(243, 129, 129, 0.9) 100%);
+        background:  -webkit-gradient(linear, left bottom, left top, from(rgba(252, 227, 138, 0.9)), to(rgba($pink-color, 0.9)));
+        background:  -webkit-linear-gradient(bottom, rgba(252, 227, 138, 0.9) 0%, rgba($pink-color, 0.9) 100%);
+        background:  -o-linear-gradient(bottom, rgba(252, 227, 138, 0.9) 0%, rgba($pink-color, 0.9) 100%);
+        background:  linear-gradient(to top, rgba(252, 227, 138, 0.9) 0%, rgba($pink-color, 0.9) 100%);
     }
 
     &__container {
@@ -71,6 +71,6 @@
 
     &__btn {
         @include btn;
-        border-color: #fff;
+        border-color: $tertiary-color;
     }
 }

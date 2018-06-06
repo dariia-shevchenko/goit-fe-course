@@ -17,7 +17,7 @@
     }
 
     &__link {
-        color: #f38181;
+        color: $pink-color;
         text-decoration: none;
     }
 
@@ -31,7 +31,7 @@
 
     &__input::-webkit-input-placeholder {
         color: #ccc;
-        font-family: 'Roboto', sans-serif;
+        font-family: $secondary-font;
         font-style: italic;
         font-weight: 300;
         font-size: 14px;
@@ -39,7 +39,7 @@
 
     &__input::-moz-placeholder {
         color: #ccc;
-        font-family: 'Roboto', sans-serif;
+        font-family: $secondary-font;
         font-style: italic;
         font-weight: 300;
         font-size: 14px;
@@ -47,7 +47,7 @@
 
     &__input:-ms-input-placeholder {
         color: #ccc;
-        font-family: 'Roboto', sans-serif;
+        font-family: $secondary-font;
         font-style: italic;
         font-weight: 300;
         font-size: 14px;
@@ -55,7 +55,7 @@
 
     &__btn {
         @include btn;
-        background-color: #95e1d3;
+        background-color: $blue-color;
     }
 
     &__form {

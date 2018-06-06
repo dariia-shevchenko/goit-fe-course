@@ -417,7 +417,7 @@ template {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #333;
@@ -480,7 +480,6 @@ body {
 .menu__link {
   text-transform: uppercase;
   text-decoration: none;
-  font-weight: 800;
   transition: all .2s;
   color: inherit;
 }
@@ -544,7 +543,7 @@ body {
 
 .banner__title-first {
   font-size: 24px;
-  font-family: 'Kaushan Script', cursive;
+  font-family: "Kaushan Script", cursive;
 }
 
 .banner__title-second {
@@ -609,7 +608,7 @@ body {
 
 .service__caption-first {
   font-size: 24px;
-  font-family: 'Kaushan Script', cursive;
+  font-family: "Kaushan Script", cursive;
 }
 
 .service__caption-second {
@@ -633,7 +632,7 @@ body {
 .service__text {
   color: #999;
   line-height: 24px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .service__title {
@@ -678,7 +677,7 @@ body {
 
 .employee__caption-first {
   font-size: 24px;
-  font-family: 'Kaushan Script', cursive;
+  font-family: "Kaushan Script", cursive;
 }
 
 .employee__caption-second {
@@ -694,7 +693,7 @@ body {
 
 .employee__text {
   color: #999;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   max-width: 940px;
   font-size: 15px;
   margin: 0 auto 90px;
@@ -787,7 +786,7 @@ body {
 }
 
 .employee__position {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 15px;
   font-weight: 300;
   color: #999;
@@ -823,7 +822,7 @@ body {
 
 .footer__input::-webkit-input-placeholder {
   color: #ccc;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: italic;
   font-weight: 300;
   font-size: 14px;
@@ -831,7 +830,7 @@ body {
 
 .footer__input::-moz-placeholder {
   color: #ccc;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: italic;
   font-weight: 300;
   font-size: 14px;
@@ -839,7 +838,7 @@ body {
 
 .footer__input:-ms-input-placeholder {
   color: #ccc;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: italic;
   font-weight: 300;
   font-size: 14px;

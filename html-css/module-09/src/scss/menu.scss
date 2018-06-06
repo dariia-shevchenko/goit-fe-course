@@ -7,7 +7,7 @@
     &__item {
         margin-left: 30px;
         position: relative;
-        color: #fff;
+        color: $tertiary-color;
     
         &:after {
             content: '';
@@ -26,7 +26,7 @@
         &--active,
         &:hover {
             color: #fce38a;
-            
+
             &:after {
                 width: 100%;
                 opacity: 1;    
@@ -44,7 +44,6 @@
     &__link {
         text-transform: uppercase;
         text-decoration: none;
-        font-weight: 800;
         -webkit-transition: all .2s;
         -o-transition: all .2s;
         transition: all .2s;
@@ -52,7 +51,7 @@
     }
 
     &__svg {
-        fill: #fff;
+        fill: $tertiary-color;
         width: 18px;
         height: 18px;
     }

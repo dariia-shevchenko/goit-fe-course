@@ -1,0 +1,48 @@
+@mixin container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@mixin caption {
+    position: relative;
+    text-align: center;
+    margin-bottom: 90px;
+    
+    &:after {
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 3px;
+        background-color: #f38181;
+        bottom: -37px;
+        left: 50%;
+        -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+    }
+    
+    &-first {
+        font-size: 24px;
+        font-family: 'Kaushan Script', cursive;
+    }
+    
+    &-second {
+        font-size: 30px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+}
+
+@mixin btn {
+    position: relative;
+    border: 3px solid transparent;
+    background: transparent;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 9px 30px;
+}

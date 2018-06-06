@@ -1,0 +1,66 @@
+.footer {
+    font-size: 16px;
+
+    &__container {
+        @include container;
+        border-top: 1px solid #e5e5e5;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    &__link {
+        color: #f38181;
+        text-decoration: none;
+    }
+
+    &__input {
+        width: 230px;
+        height: 40px;
+        border: 1px solid #e7e7e7;
+        box-sizing: border-box;
+        padding: 13px;
+    }
+
+    &__input::-webkit-input-placeholder {
+        color: #ccc;
+        font-family: 'Roboto', sans-serif;
+        font-style: italic;
+        font-weight: 300;
+        font-size: 14px;
+    }
+
+    &__input::-moz-placeholder {
+        color: #ccc;
+        font-family: 'Roboto', sans-serif;
+        font-style: italic;
+        font-weight: 300;
+        font-size: 14px;
+    }
+
+    &__input:-ms-input-placeholder {
+        color: #ccc;
+        font-family: 'Roboto', sans-serif;
+        font-style: italic;
+        font-weight: 300;
+        font-size: 14px;
+    }
+
+    &__btn {
+        @include btn;
+        background-color: #95e1d3;
+    }
+
+    &__form {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+}

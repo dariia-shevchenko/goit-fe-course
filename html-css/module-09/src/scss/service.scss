@@ -1,0 +1,50 @@
+.service {
+    margin-top: 45px;
+    
+    &__container {
+        @include container;
+    }
+
+    &__caption  {
+        @include caption;
+    }
+
+    &__content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    }
+
+    &__item {
+        -ms-flex-preferred-size: 33.33%;
+            flex-basis: 33.33%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 0 20px 100px;
+        box-sizing: border-box;
+    }
+
+    &__text {
+        color: #999;
+        line-height: 24px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    &__icon {
+        width: 32px;
+        height: 32px;
+        fill: #95e1d3;
+        -ms-flex-negative: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        padding-right: 30px;
+    }
+}

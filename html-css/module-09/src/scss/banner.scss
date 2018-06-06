@@ -1,0 +1,76 @@
+.banner {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-image: url('../img/eagle.png');
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    height: 100vh;
+    min-height: 800px;
+    color: #fff;
+
+    @media
+        (-webkit-min-device-pixel-ratio: 2),
+        (   min--moz-device-pixel-ratio: 2),
+        (     -o-min-device-pixel-ratio: 2/1),
+        (        min-device-pixel-ratio: 2),
+        (                min-resolution: 192dpi),
+        (                min-resolution: 2dppx) { 
+            background-image: url('../img/eagle@2x.png');
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background:  -webkit-gradient(linear, left bottom, left top, from(rgba(252, 227, 138, 0.9)), to(rgba(243, 129, 129, 0.9)));
+        background:  -webkit-linear-gradient(bottom, rgba(252, 227, 138, 0.9) 0%, rgba(243, 129, 129, 0.9) 100%);
+        background:  -o-linear-gradient(bottom, rgba(252, 227, 138, 0.9) 0%, rgba(243, 129, 129, 0.9) 100%);
+        background:  linear-gradient(to top, rgba(252, 227, 138, 0.9) 0%, rgba(243, 129, 129, 0.9) 100%);
+    }
+
+    &__container {
+        @include container;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    &__title {
+        @include caption;
+        padding: 0 50px;
+        margin-bottom: 125px;
+
+        &:after {
+            content: none;
+        }
+
+        &-first {
+            font-size: 72px;
+        }
+
+        &-second {
+            font-size: 150px;
+        }
+    }
+
+    &__btn {
+        @include btn;
+        border-color: #fff;
+    }
+}

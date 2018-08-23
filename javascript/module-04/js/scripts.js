@@ -13,7 +13,7 @@ const order = {
     cheese: 1
 };
 
-function Cashier(name, productsDatabase, totalPrice, customerMoney, changeAmount) {
+function Cashier(name, productsDatabase) {
     this.name = name;
     this.productsDatabase = productsDatabase;
     this.totalPrice = 0;

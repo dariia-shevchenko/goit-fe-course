@@ -51,7 +51,6 @@ function Cashier(name, productsDatabase, totalPrice, customerMoney, changeAmount
 
     this.getCustomerMoney = function(value) {
         this.customerMoney  = value;
-        // return this.customerMoney ;
     };
 
     this.countChange = function() {

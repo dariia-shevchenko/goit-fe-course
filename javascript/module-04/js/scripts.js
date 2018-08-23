@@ -13,12 +13,12 @@ const order = {
     cheese: 1
 };
 
-function Cashier(name, productsDatabase, totalPrice = 0, customerMoney = 0, changeAmount = 0) {
+function Cashier(name, productsDatabase, totalPrice, customerMoney, changeAmount) {
     this.name = name;
     this.productsDatabase = productsDatabase;
-    this.totalPrice = totalPrice;
-    this.customerMoney = customerMoney;
-    this.changeAmount = changeAmount;
+    this.totalPrice = 0;
+    this.customerMoney = 0;
+    this.changeAmount = 0;
 
     this.greet = function() {
         console.log(`Здравствуйте, вас обслуживает ${this.name}`);
@@ -51,7 +51,7 @@ function Cashier(name, productsDatabase, totalPrice = 0, customerMoney = 0, chan
 
     this.getCustomerMoney = function(value) {
         this.customerMoney  = value;
-        return this.customerMoney ;
+        // return this.customerMoney ;
     };
 
     this.countChange = function() {

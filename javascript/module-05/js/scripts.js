@@ -65,7 +65,7 @@ const users = [
       age: 27,
     },
     {
-      guid: '150b00fb-dd82-427d-9faf-2879ea87c695',
+      id: '150b00fb-dd82-427d-9faf-2879ea87c695',
       name: 'Blackburn Dotson',
       email: 'blackburndotson@furnigeer.com',
       eyeColor: 'brown',
@@ -93,11 +93,7 @@ const users = [
   ];
 
 const getAllNames = arr => {
-    const getNames = [];
-    arr.forEach(user => {
-        getNames.push(user.name)
-    });
-    return getNames;
+    return arr.map(user => user.name);
 };
 console.log(getAllNames(users)); 
 
@@ -107,13 +103,8 @@ const getUsersByEyeColor = (arr, color) => {
 console.log(getUsersByEyeColor(users, 'blue'));
 
 const getUsersByGender = (arr, gender) => {
-    const getNames = [];
-    arr.map(user => {
-        if (user.gender === gender) {
-            getNames.push(user.name);
-        }
-    });
-    return getNames;
+    const newArray = arr.filter(user => user.gender === gender);
+    return newArray.map(user => user.name);
 };
 console.log(getUsersByGender(users, 'male'));
 
@@ -140,11 +131,9 @@ const getTotalBalance = arr => {
 console.log(getTotalBalance(users));
 
 const getUsersByFriend = (arr, name) => {
-    const getUser = arr.reduce(
-        (acc, user) => (user.friends.indexOf(name) !== -1) ? acc.concat(user.name) : acc,
-        []
-      );
-      return getUser;
+    return arr.reduce(
+        (acc, user) => (user.friends.indexOf(name) !== -1) ? acc.concat(user.name) : acc,[]
+    );
 };
 console.log(getUsersByFriend(users, 'Briana Decker'));
 console.log(getUsersByFriend(users, 'Goldie Gentry'));

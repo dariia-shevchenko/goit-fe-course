@@ -16,20 +16,10 @@ const order = {
 function Cashier(name, productsDatabase) {
     this.name = name;
     this.productsDatabase = productsDatabase;
-    this.totalPrice = 0;
     this.customerMoney = 0;
-    this.changeAmount = 0;
 
-    this.greet = function() {
-        console.log(`Здравствуйте, вас обслуживает ${this.name}`);
-    };
-
-    this.onSuccess = function() {
-        if (this.changeAmount > 0) {
-            console.log(`Спасибо за покупку, ваша сдача ${this.changeAmount}`);
-        } else {
-            console.log(`Спасибо за покупку`);
-        }
+    this.onSuccess = function(change) {
+        console.log(`Спасибо за покупку, ваша сдача ${change}`);
     };
 
     this.onError = function() {
@@ -37,16 +27,12 @@ function Cashier(name, productsDatabase) {
     };
 
     this.countTotalPrice = function(order) {
-        const orders = Object.entries(order);
+        let price = 0;
 
         for (const key in productsDatabase) {
-
-            for (let i = 0; i < orders.length; i++) {
-                if (key == orders[i][0]) {
-                    this.totalPrice += productsDatabase[key] * orders[i][1];
-                }
-            }
+            if (order[key] !== undefined) price += productsDatabase[key] * order[key];
         }
+        return price;
     };
 
     this.getCustomerMoney = function(value) {
@@ -54,18 +40,11 @@ function Cashier(name, productsDatabase) {
     };
 
     this.countChange = function() {
-        if (this.customerMoney >= this.totalPrice) {
-            this.changeAmount = this.customerMoney - this.totalPrice;            
-            return this.changeAmount;
-        } else {
-            return null;
-        }
+        return (this.customerMoney >= totalPrice) ? (this.customerMoney - totalPrice) : null;
     };
 
     this.reset = function() {
-        this.totalPrice = 0;
         this.customerMoney = 0;
-        this.changeAmount = 0;
     };
 };
 
@@ -73,26 +52,21 @@ const mango = new Cashier('Mango', products);
 
 console.log(mango.name);
 console.log(mango.productsDatabase);
-console.log(mango.totalPrice);
 console.log(mango.customerMoney);
-console.log(mango.changeAmount);
 
-mango.greet();
-mango.countTotalPrice(order);
-console.log(mango.totalPrice);
+const totalPrice = mango.countTotalPrice(order);
+console.log(totalPrice);
 mango.getCustomerMoney(300);
 console.log(mango.customerMoney);
 
-const result = mango.countChange();
-console.log(result);
+const change = mango.countChange();
+console.log(change);
 
-if(result !== null) {
-  mango.onSuccess();
+if(change !== null) {
+  mango.onSuccess(change);
 } else {
   mango.onError();
 }
 
 mango.reset();
-console.log(mango.totalPrice);
 console.log(mango.customerMoney);
-console.log(mango.changeAmount);

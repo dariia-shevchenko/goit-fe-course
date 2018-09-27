@@ -103,8 +103,7 @@ const getUsersByEyeColor = (arr, color) => {
 console.log(getUsersByEyeColor(users, 'blue'));
 
 const getUsersByGender = (arr, gender) => {
-    const newArray = arr.filter(user => user.gender === gender);
-    return newArray.map(user => user.name);
+    return arr.filter(user => user.gender === gender).map(user => user.name);
 };
 console.log(getUsersByGender(users, 'male'));
 
@@ -131,8 +130,7 @@ const getTotalBalance = arr => {
 console.log(getTotalBalance(users));
 
 const getUsersByFriend = (arr, name) => {
-    const newArray = arr.filter(user => user.friends.indexOf(name) !== -1);
-    return newArray.map(user => user.name);
+    return arr.filter(user => user.friends.some(user => user === name)).map(user => user.name);
 };
 console.log(getUsersByFriend(users, 'Briana Decker'));
 console.log(getUsersByFriend(users, 'Goldie Gentry'));

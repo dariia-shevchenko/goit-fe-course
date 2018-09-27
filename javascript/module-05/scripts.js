@@ -131,9 +131,8 @@ const getTotalBalance = arr => {
 console.log(getTotalBalance(users));
 
 const getUsersByFriend = (arr, name) => {
-    return arr.reduce(
-        (acc, user) => (user.friends.indexOf(name) !== -1) ? acc.concat(user.name) : acc,[]
-    );
+    const newArray = arr.filter(user => user.friends.indexOf(name) !== -1);
+    return newArray.map(user => user.name);
 };
 console.log(getUsersByFriend(users, 'Briana Decker'));
 console.log(getUsersByFriend(users, 'Goldie Gentry'));

@@ -19,11 +19,13 @@ const posts = [
   }
 ];
 
+const body = document.querySelector("body");
+const postList = document.querySelector(".post-list");
+const item = document.querySelector(".post");
 const image = document.querySelector(".post__image");
 const title = document.querySelector(".post__title");
 const text = document.querySelector(".post__text");
 const link = document.querySelector(".button");
-const postList = document.querySelector(".post-list");
 
 const createPostCard = function(post) {
   image.setAttribute('src', post.img);
@@ -31,22 +33,25 @@ const createPostCard = function(post) {
   title.textContent = post.title;  
   text.textContent = post.text;
   
-  return postList.innerHTML;
+  return item.outerHTML;
 };
 
 const createCards = function (posts) {
-  return posts.map(element => {
+  return posts.map(element => {    
     return createPostCard(element);
   });
 }
 
 const addCards = function () {
-  const postCards = createCards(posts);
   postList.innerHTML = '';
+  const allCards = postList.cloneNode(true);
+  body.removeChild(postList);
 
-  postCards.forEach(element => {
-    postList.innerHTML += element;
+  createCards(posts).forEach(element => {
+    allCards.innerHTML += element;
   });
+
+  body.prepend(allCards);
 }
 
-addCards()
+addCards();

@@ -19,21 +19,30 @@ const posts = [
   }
 ];
 
-const body = document.querySelector("body");
-const postList = document.querySelector(".post-list");
-const item = document.querySelector(".post");
-const image = document.querySelector(".post__image");
-const title = document.querySelector(".post__title");
-const text = document.querySelector(".post__text");
-const link = document.querySelector(".button");
-
 const createPostCard = function(post) {
+  const item = document.createElement("div");
+  const image = document.createElement('img');
+  const title = document.createElement('h2');
+  const text = document.createElement('p');
+  const link = document.createElement('a');
+
+  item.classList.add("post");
+  image.classList.add("post__image");
+  title.classList.add("post-title");
+  text.classList.add("post-text");
+  link.classList.add("button");
+
   image.setAttribute('src', post.img);
   link.setAttribute('href', post.link);
   title.textContent = post.title;  
   text.textContent = post.text;
+
+  item.appendChild(image);
+  item.appendChild(title);
+  item.appendChild(text);
+  item.appendChild(link);
   
-  return item.outerHTML;
+  return item;
 };
 
 const createCards = function (posts) {
@@ -43,15 +52,15 @@ const createCards = function (posts) {
 }
 
 const addCards = function () {
-  postList.innerHTML = '';
-  const allCards = postList.cloneNode(true);
-  body.removeChild(postList);
+  const body = document.querySelector("body");
+  const postList = document.createElement("div");
+  postList.classList.add("post-list");
 
   createCards(posts).forEach(element => {
-    allCards.innerHTML += element;
+    postList.appendChild(element);
   });
 
-  body.prepend(allCards);
+  body.prepend(postList);
 }
 
 addCards();

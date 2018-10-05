@@ -8,6 +8,18 @@ const galleryItems = [
   { preview: 'img/preview-7.jpeg', fullview: 'img/fullview-7.jpeg', alt: "alt text 6" },
 ];
 
+const createFullviewItem = function(items) {
+  const div = document.createElement("div");
+  const image = document.createElement('img');
+
+  image.setAttribute('src', items[0].fullview);
+  image.setAttribute('alt', items[0].alt);
+  div.classList.add("fullview");
+  div.appendChild(image);
+
+  return div;
+};
+
 const createItem = function(item) {
   const li = document.createElement("li");
   const image = document.createElement('img');
@@ -29,6 +41,7 @@ const createItems = function (items) {
 
 const addItems = function () {
   const gallery = document.querySelector(".image-gallery");
+  const fullviewItem = createFullviewItem(galleryItems);
   const itemList = document.createElement("ul");
   itemList.classList.add("preview");
 
@@ -39,6 +52,7 @@ const addItems = function () {
   const firstImg = itemList.firstElementChild.querySelector("img");
   firstImg.classList.add("active");
 
+  gallery.appendChild(fullviewItem);
   gallery.appendChild(itemList);
 }
 

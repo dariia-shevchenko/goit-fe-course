@@ -1,7 +1,11 @@
-let minutes, seconds, milisec, startTime, timerInterval;
+let minutes = "00";
+let seconds = "00";
+let milisec = 0;
 let delta = 0;
+let startTime = 0;
 let timerActive = false;
 let lapArray = [];
+let timerInterval;
  
 const timer = document.querySelector(".js-time");
 const start = document.querySelector(".js-start");
@@ -36,6 +40,9 @@ buttonReset.addEventListener('click', () => {
   timer.innerHTML = "00:00.0";
   start.innerHTML = "Start";
   timerActive = false;
+  minutes = "00";
+  seconds = "00";
+  milisec = 0;
   delta = 0;
   laps.innerHTML = "";
   lapArray = [];
@@ -58,6 +65,6 @@ function startTimer () {
 const createLapItems = function() {
   const li = document.createElement("li");
   li.innerHTML = minutes + ":" + seconds + "." + milisec;
-  
+
   return lapArray.push(li);  
 };

@@ -10,20 +10,20 @@ body {
 }
 
 .time {
-  font-size: 120px;
-  margin: 0.5em;
+  font-size: 100px;
+  margin: 0.3em;
   color: #3c4a94;
 }
 
 .btn {
-  font-size: 32px;
+  font-size: 24px;
   background: #fff7b0;
   border: 1px solid #e6e6e6;
   box-shadow: 2px 3px 6px 1px #e4dfdf;
   margin: 0 10px;
   padding: 7px 15px;
   outline: none;
-  min-width: 160px;
+  min-width: 130px;
   border-radius: 3px;
 }
 

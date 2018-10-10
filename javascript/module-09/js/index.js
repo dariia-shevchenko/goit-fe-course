@@ -8,7 +8,6 @@ let lapArray = [];
 let timerInterval;
  
 const timer = document.querySelector(".js-time");
-const start = document.querySelector(".js-start");
 const laps = document.querySelector(".js-laps");
 const buttonStart = document.querySelector(".js-start");
 const buttonReset = document.querySelector(".js-reset");
@@ -20,11 +19,11 @@ buttonStart.addEventListener('click', () => {
     startTime = Date.now() - delta;
     timerInterval = setInterval(startTimer, 100);
     timerActive = !timerActive;
-    start.innerHTML = "Pause";
+    buttonStart.innerHTML = "Pause";
   } else {
     clearInterval(timerInterval);
     timerActive = !timerActive;
-    start.innerHTML = "Continue";
+    buttonStart.innerHTML = "Continue";
   }
 });
 
@@ -38,7 +37,7 @@ buttonLap.addEventListener('click', () => {
 buttonReset.addEventListener('click', () => {
   clearInterval(timerInterval);
   timer.innerHTML = "00:00.0";
-  start.innerHTML = "Start";
+  buttonStart.innerHTML = "Start";
   timerActive = false;
   minutes = "00";
   seconds = "00";
@@ -49,7 +48,7 @@ buttonReset.addEventListener('click', () => {
   buttonReset.disabled = true;
 });
 
-function startTimer () {
+const startTimer = function() {
   delta = new Date(Date.now() - startTime);
 
   milisec =  Math.floor(delta.getMilliseconds()/100);

@@ -1,0 +1,96 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+.btn {
+  font-size: 16px;
+  background: #fff7b0;
+  border: 1px solid #e6e6e6;
+  box-shadow: 2px 3px 6px 1px #e4dfdf;
+  margin: 0 10px;
+  padding: 10px 20px;
+  outline: none;
+  min-width: 130px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  display: block;
+  margin: 0 auto 25px;
+}
+
+form {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.input-name,
+.input-age {
+  padding: 10px;
+  width: 70%;
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid #e6e6e6;
+  box-shadow: 2px 3px 6px 1px #e4dfdf;
+  margin-bottom: 25px;
+}
+
+.input__wrap {
+  width: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.input__wrap span {
+  position: absolute;
+  bottom: 5px;
+  left: 13%;
+  font-size: 12px;
+  color: #ff367a;
+}
+
+.users,
+.user {
+  max-height: 0;
+  font-size: 0;
+}
+
+.users.isActive,
+.user.isActive {
+  margin-bottom: 25px;
+  max-height: 100%;
+  font-size: 16px;
+  transition: all ease .2s;
+}
+
+.users__header,
+.user__header {
+  background-color: rgba(255, 44, 116, .88);
+  color: #f9f7e7;
+}
+
+.users__header,
+.user__header,
+.users__item,
+.user__item {
+  display: flex;
+}
+
+.users__header p,
+.user__header p,
+.users__item p,
+.user__item p {
+  flex-basis: 25%;
+}
+
+.users__header p,
+.user__header p {
+  text-transform: uppercase;
+}
+
+.users__header p:first-child,
+.users__item p:first-child,
+.user__header p:first-child,
+.user__item p:first-child {
+  flex-basis: 50%;
+  padding-left: 20px;
+}

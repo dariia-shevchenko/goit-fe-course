@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Module 10</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <!-- GET ALL USERS -->
+        <div class="users">
+            <div class="users__header">
+                <p>id</p>
+                <p>name</p>
+                <p>age</p>
+            </div>
+            <div class="users__body"></div>
+        </div>
+        <button class="btn users-add">get all users</button>
+
+        <!-- GET USER BY ID -->
+        <div class="user">
+            <div class="user__header">
+                <p>id</p>
+                <p>name</p>
+                <p>age</p>
+            </div>
+            <div class="user__body"></div>
+        </div>
+        <button class="btn user-id">get user by id</button>
+
+        <!-- ADD USER -->
+        <form method="post" class="input">
+            <div class="input__wrap">
+                <input type="text" placeholder="Name" name="name" class="input-name">
+            </div>
+            <div class="input__wrap">
+                <input type="text" placeholder="Age" name="age" class="input-age">
+            </div>
+            <input type="button" value="add user" class="btn user-add" >
+        </form>
+        <!-- <button class="btn post"></button> -->
+
+        <!-- REMOVE USER -->
+        <button class="btn user-remove">remove user by id</button>
+
+        <!-- UPDATE USER BY ID -->
+        <button class="btn user-update">update user by id</button>
+
+        <script src="js/index.js"></script>
+    </body>
+</html>

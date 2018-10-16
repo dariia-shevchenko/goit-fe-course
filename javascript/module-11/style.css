@@ -1,0 +1,43 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  display: flex;
+}
+
+#laptops-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 calc(100% - 180px);
+}
+
+.item {
+  flex-basis: 33.3333%;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.item-title {
+  text-align: center;
+}
+
+.item-param {
+  display: flex;
+  justify-content: space-evenly;
+  color: #0a22e4;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+.menu-side {
+  flex: 1 180px;
+}

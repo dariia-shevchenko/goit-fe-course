@@ -5,19 +5,22 @@ let total = 0;
 
 do {
     userInput = prompt('Введите число', '0');
-    let userInputNumber = +userInput;
 
-    if (isNaN(userInputNumber)) {
+    if (isNaN(+userInput)) {
         alert('Было введено не число, попробуйте еще раз');
         continue;
     }
 
-    numbers.push(userInputNumber);
-    
+    if (userInput) {
+        numbers.push(+userInput);
+    }
+
 } while (userInput !== null);
 
 for(const number of numbers) {
     total += number;
 }
 
-alert(`Общая сумма чисел равна ${total}`);
+if (numbers.length > 0) {
+    alert(`Общая сумма чисел равна ${total}`);    
+}

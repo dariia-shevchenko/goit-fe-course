@@ -2,9 +2,12 @@ const url = "https://test-users-api.herokuapp.com/users/";
 
 const usersAdd = document.querySelector(".btn-users-add");
 const list = document.querySelector(".users-add");
+const listBody = document.querySelector(".users-add .users__body");
 
 const userId = document.querySelector(".btn-user-id");
+const inputId = document.querySelector(".input-id");
 const listId = document.querySelector(".user-id");
+const listIdBody = document.querySelector(".user-id .users__body");
 
 const inputBtn = document.querySelector(".input-user-add");
 const inputName = document.querySelector(".input-name");
@@ -13,33 +16,15 @@ const listPost = document.querySelector(".user-post");
 
 const userRemove = document.querySelector(".btn-user-remove");
 const listRemove = document.querySelector(".user-remove");
+const inputRemove = document.querySelector(".input-remove");
 
 const userUpdate = document.querySelector(".btn-user-update");
+const inputIdUpdate = document.querySelector(".input-id-update");
 const inputNameUpdate = document.querySelector(".input-name-update");
 const inputAgeUpdate = document.querySelector(".input-age-update");
 const listUpdate = document.querySelector(".user-update");
 
 // GENERAL
-const getUsers = (fun1, fun2, obj) => {
-  fetch(url)
-    .then(response => {
-      if (response.ok) {
-        return response.json()
-      }
-      throw new Error("Error fetching data");
-    })
-    .then(data => {
-      if (!obj) {
-        fun1(fun2(data.data));
-      } else {
-        fun1(fun2(data.data), obj);
-      }
-    })
-    .catch(error => {
-      console.error("Error", error);
-    })
-}
-
 const UserById = (id) => {
    return fetch(url + id)
     .then(response => {
@@ -62,16 +47,20 @@ const createUser = function(item) {
       userItem.appendChild(p);
     }
   }
-  
   return userItem;
 };
 
 const addUsers = function(data, divElement) {
+  const userBodyRepl = document.querySelector(`${divElement} .users__body`)
+  const userBody = document.createElement("div")
+  userBody.classList.add("users__body");
+
   if (Array.isArray(data)) {
-    data.map(item => divElement.appendChild(createUser(item)));
+    data.map(item => userBody.appendChild(createUser(item)));
   } else {
-    divElement.appendChild(createUser(data));    
+    userBody.appendChild(createUser(data));    
   }
+  userBodyRepl.replaceWith(userBody);
 };
 
 const displayingUsers = function(item) {
@@ -97,30 +86,26 @@ const resetError = function(input) {
 const validate = function(form) {
   var elems = form.elements;
 
-  resetError(elems.name.parentNode);
-  if (!elems.name.value) {
-    showError(elems.name.parentNode, "Enter name");
-    // return false;
+  if (elems.id) {
+    resetError(elems.id.parentNode);
+    if (!elems.id.value) {
+      showError(elems.id.parentNode, "Enter id");
+    }
   }
 
-  resetError(elems.age.parentNode);
-  if (!elems.age.value || isNaN(elems.age.value)) {
-    showError(elems.age.parentNode, "Enter age");
-    return false;
+  if (elems.name) {
+    resetError(elems.name.parentNode);
+    if (!elems.name.value) {
+      showError(elems.name.parentNode, "Enter name");
+    }
   }
-  return true;
-}
 
-const randomUser = function(arr) {
-  const randomNumber =  Math.floor(Math.random() * arr.length);
-  
-  return arr[randomNumber].id;
-}
-
-const getLastUser = function(arr) {
-  const userAmount = arr.length;
-  
-  return arr[userAmount - 1].id;
+  if (elems.age) {
+    resetError(elems.age.parentNode);
+    if (!elems.age.value || isNaN(elems.age.value)) {
+      showError(elems.age.parentNode, "Enter age");
+    }
+  }
 }
 
 // GET ALL USERS
@@ -133,7 +118,7 @@ const getAllUsers = () => {
       throw new Error("Error fetching data");
     })
     .then(data => {
-      addUsers(data.data, list);
+      addUsers(data.data, ".users-add");
       displayingUsers(list);
     })
     .catch(error => {
@@ -143,7 +128,6 @@ const getAllUsers = () => {
 
 const getUsersHandler = function() {
   getAllUsers();
-  usersAdd.disabled = true;
 }
 usersAdd.addEventListener("click", getUsersHandler);
 
@@ -153,7 +137,7 @@ const getUserById = (id) => {
   UserById(id)
     .then(data => {
       console.log("data", data);
-      addUsers(data.data, listId);
+      addUsers(data.data, ".user-id");
       displayingUsers(listId);
     })
     .catch(error => {
@@ -162,7 +146,10 @@ const getUserById = (id) => {
 }
 
 const getUserByIdHandler = function() {
-  getUsers(getUserById, randomUser)
+  validate(this.form);
+  if (!inputId.value) return;
+  getUserById(inputId.value);
+  inputId.value = "";
 };
 
 userId.addEventListener("click", getUserByIdHandler);
@@ -181,7 +168,7 @@ const addUser = (name, age) => {
     .then(data => {
       UserById(data.data._id)
       .then(data => {
-        addUsers(data.data, listPost);
+        addUsers(data.data, ".user-post");
         displayingUsers(listPost);
       })
     })
@@ -191,7 +178,7 @@ const addUser = (name, age) => {
 const addUserHandler = function(e) {
   e.preventDefault();
   validate(this.form);
-  if (!validate(this.form)) return;
+  if (!inputName.value && !inputAge.value) return;
   addUser(inputName.value, inputAge.value);
   inputName.value = "";
   inputAge.value = "";
@@ -203,7 +190,7 @@ inputBtn.addEventListener("click", addUserHandler);
 const removeUser = (id) => {
   UserById(id)
     .then(data => {
-      addUsers(data.data, listRemove);
+      addUsers(data.data, ".user-remove");
       displayingUsers(listRemove);
     })
     .then(
@@ -216,7 +203,10 @@ const removeUser = (id) => {
 }
 
 const removeHandler = function() {
-  getUsers(removeUser, getLastUser)
+  validate(this.form);
+  if (!inputRemove.value) return;
+  removeUser(inputRemove.value);
+  inputRemove.value = "";
 }
 userRemove.addEventListener("click", removeHandler);
 
@@ -232,7 +222,7 @@ const updateUser = (id, user) => {
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      addUsers(data.data, listUpdate);
+      addUsers(data.data, ".user-update");
       displayingUsers(listUpdate);
     })
     .catch(error => console.log('ERROR' + error));
@@ -241,8 +231,9 @@ const updateUser = (id, user) => {
 const updateHandler = function(e) {
   e.preventDefault();
   validate(this.form);
-  if (!validate(this.form)) return;
-  getUsers(updateUser, randomUser, {name: inputNameUpdate.value, age: inputAgeUpdate.value})
+  if (!inputIdUpdate.value && !inputNameUpdate.value && !inputAgeUpdate.value) return;
+  updateUser(inputIdUpdate.value, {name: inputNameUpdate.value, age: inputAgeUpdate.value})
+  inputIdUpdate.value = "";
   inputNameUpdate.value = "";
   inputAgeUpdate.value = "";
 }

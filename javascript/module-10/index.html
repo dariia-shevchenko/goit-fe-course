@@ -19,7 +19,12 @@
         </div>
 
         <!-- GET USER BY ID -->
-        <button class="btn btn-user-id">get user by id</button>
+        <form method="post" class="form">
+            <div class="input__wrap">
+                <input type="text" placeholder="Id" name="id" class="input input-id">
+            </div>
+            <input type="button" value="get user by id" class="btn btn-user-id" >
+        </form>
         <div class="users user-id">
             <div class="users__header">
                 <p>id</p>
@@ -50,7 +55,13 @@
         <!-- <button class="btn post"></button> -->
 
         <!-- REMOVE USER -->
-        <button class="btn btn-user-remove">remove user by id</button>
+        <!-- <button class="btn btn-user-remove">remove user by id</button> -->
+        <form method="post" class="form">
+            <div class="input__wrap">
+                <input type="text" placeholder="Id" name="id" class="input input-remove">
+            </div>
+            <input type="button" value="remove user by id" class="btn btn-user-remove" >
+        </form>
         <div class="users user-remove">
             <div class="users__header">
                 <p>id</p>
@@ -67,6 +78,9 @@
             </div>
             <div class="input__wrap">
                 <input type="text" placeholder="Age" name="age" class="input input-age-update">
+            </div>
+            <div class="input__wrap">
+                <input type="text" placeholder="Id" name="id" class="input input-id-update">
             </div>
             <input type="button" value="update user by id" class="btn btn-user-update" >
         </form>

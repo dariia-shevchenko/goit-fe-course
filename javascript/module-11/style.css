@@ -2,6 +2,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   display: flex;
+  margin: 0;
 }
 
 #laptops-container {
@@ -40,4 +41,19 @@ img {
 
 .menu-side {
   flex: 1 180px;
+  padding: 0 15px;
+  background-color: #fffef1;
+}
+
+.btn {
+  font-size: 16px;
+  background: #fff7b0;
+  border: 1px solid #e6e6e6;
+  box-shadow: 2px 3px 6px 1px #e4dfdf;
+  padding: 10px 15px;
+  outline: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  margin: 0 auto 25px;
+  cursor: pointer;
 }

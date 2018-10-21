@@ -24,12 +24,11 @@ class Hamburger {
     removeTopping(topping) {
         if (this._toppings.includes(topping)) {
             const arr = this._toppings;
-            for(var i = 0; i < arr.length; i++){ 
-                if ( arr[i] === topping) {
-                    arr.splice(i, 1); 
-                }
-            }
-        }}
+            arr.filter((item, i) => {
+                if (item === topping) arr.splice(i, 1)
+            })
+        }
+    }
   
     /**
      * Получить список toppings
@@ -60,12 +59,9 @@ class Hamburger {
      * @returns {Number} - Цена в деньгах
      */
     get price() {
-        const hamburgerSizesPrice = Hamburger.SIZES[this._size].price;
-        const hamburgerStuffingPrice = Hamburger.STUFFINGS[this._stuffing].price;
-        let hamburgerToppingsPrice = 0;
-        this._toppings.forEach(item => hamburgerToppingsPrice += Hamburger.TOPPINGS[item].price);
+        const hamburgerToppingsPrice = this._toppings.reduce((sum, item) => sum + Hamburger.TOPPINGS[item].price, 0);
 
-        return hamburgerSizesPrice + hamburgerStuffingPrice + hamburgerToppingsPrice;
+        return Hamburger.SIZES[this._size].price + Hamburger.STUFFINGS[this._stuffing].price + hamburgerToppingsPrice;
     }
   
     /**
@@ -73,12 +69,9 @@ class Hamburger {
      * @returns {Number} - Калорийность в калориях
      */
     get calories() {
-        const hamburgerSizesCalories = Hamburger.SIZES[this._size].calories;
-        const hamburgerStuffingCalories = Hamburger.STUFFINGS[this._stuffing].calories;
-        let hamburgerToppingsCalories = 0;
-        this._toppings.forEach(item => { hamburgerToppingsCalories += Hamburger.TOPPINGS[item].calories});
+        const hamburgerToppingsCalories = this._toppings.reduce((sum, item) => sum + Hamburger.TOPPINGS[item].calories, 0);
 
-        return hamburgerSizesCalories + hamburgerStuffingCalories + hamburgerToppingsCalories;
+        return Hamburger.SIZES[this._size].calories + Hamburger.STUFFINGS[this._stuffing].calories + hamburgerToppingsCalories;
     }
 }
 

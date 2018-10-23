@@ -22,12 +22,7 @@ class Hamburger {
      * @param {String} topping - Тип добавки
      */
     removeTopping(topping) {
-        if (this._toppings.includes(topping)) {
-            const arr = this._toppings;
-            arr.filter((item, i) => {
-                if (item === topping) arr.splice(i, 1)
-            })
-        }
+      this._toppings = this._toppings.filter(item => item !== topping);
     }
   
     /**

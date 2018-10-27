@@ -40,11 +40,11 @@ gulp.task('scripts', () => {
       'app/js/*.js'
     ])
     .pipe(plumber())
-    // .pipe(
-    //   babel({
-    //     presets: ['@babel/env']
-    //   })
-    // )
+    .pipe(
+      babel({
+        presets: ['@babel/env']
+      })
+    )
     .pipe(concat('scripts.js'))
     .pipe(gulp.dest('./dist/js'))
     .pipe(uglify())

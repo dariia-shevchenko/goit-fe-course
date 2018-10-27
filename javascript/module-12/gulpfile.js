@@ -13,6 +13,7 @@ const stylelint = require('gulp-stylelint');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const csso = require('gulp-csso');
+const babel = require('gulp-babel');
 
 gulp.task('styles', () => {
   return gulp
@@ -39,6 +40,11 @@ gulp.task('scripts', () => {
       'app/js/*.js'
     ])
     .pipe(plumber())
+    // .pipe(
+    //   babel({
+    //     presets: ['@babel/env']
+    //   })
+    // )
     .pipe(concat('scripts.js'))
     .pipe(gulp.dest('./dist/js'))
     .pipe(uglify())

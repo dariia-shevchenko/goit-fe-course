@@ -7,16 +7,16 @@
     </head>
 
     <body>
-        <form class="cards-form" action="">
-            <input type="text" name="url">
-            <input type="submit" value="Add">
+        <form class="cards-form">
+            <input class="cards-input" type="text" name="url">
+            <input class="cards-btn" type="submit" value="Add">
         </form>
         <ul id="cards" class="cards-list"></ul>
 
         <template id="cards-items">
             <li class="cards-item">
                 <span class="cards-item__url">{{url}}</span>
-                <button class="cards-item__btn">Remove</button>
+                <button class="cards-item__btn"></button>
             </li>
         </template>
         <script src="js/scripts.min.js"></script>

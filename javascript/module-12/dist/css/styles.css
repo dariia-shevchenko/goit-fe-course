@@ -1,0 +1,70 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0; }
+
+.cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  justify-content: center; }
+
+.cards-item {
+  list-style: none;
+  min-width: 200px;
+  min-height: 50px;
+  background-color: #90dad3;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; }
+  .cards-item__btn {
+    background: transparent;
+    border: none;
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    padding: 10px; }
+    .cards-item__btn::before, .cards-item__btn::after {
+      content: '';
+      width: 16px;
+      height: 1px;
+      display: block;
+      background: #000;
+      position: absolute;
+      right: 2px; }
+    .cards-item__btn::before {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg); }
+    .cards-item__btn::after {
+      -webkit-transform: rotate(135deg);
+              transform: rotate(135deg); }
+
+.cards-form {
+  max-width: 450px;
+  display: flex;
+  margin: 25px auto;
+  justify-content: space-evenly; }
+
+.cards-input {
+  width: 70%;
+  padding: 12px 10px;
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid #e6e6e6;
+  box-shadow: 2px 3px 6px 1px #e4dfdf; }
+
+.cards-btn {
+  font-size: 16px;
+  background: #fff7b0;
+  border: 1px solid #e6e6e6;
+  box-shadow: 2px 3px 6px 1px #e4dfdf;
+  outline: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 11px 15px;
+  margin-left: 15px;
+  line-height: 1; }

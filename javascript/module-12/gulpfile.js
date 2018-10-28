@@ -35,10 +35,7 @@ gulp.task('styles', () => {
 
 gulp.task('scripts', () => {
   return gulp
-    .src([
-      'app/js/lib/*.js',
-      'app/js/*.js'
-    ])
+    .src('app/js/*.js')
     .pipe(plumber())
     .pipe(
       babel({
